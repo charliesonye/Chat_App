@@ -12,6 +12,12 @@ const PREFIX = 'chat-app'
         return initialValue
     }
   })
+
+  useEffect(()=> {
+    localStorage.setItem(prefixedKey, JSON.stringify(value))
+  }, [prefixedKey, value])
+
+  return [value, setValue]
 }
 
 export default useLocalStorage;
